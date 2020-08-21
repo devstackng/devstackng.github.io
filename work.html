@@ -92,7 +92,7 @@
         <div class="container works-container">
             <div class="row">
                 <div v-for="(project, index) in projects" :key="index" class="col-md-5 offset-md-1 work-item">
-                    <a target="_blank" href="https://hiisnigeria.github.io/">
+                    <a target="_blank" :href="project.url">
                         <div class="scale-mask">
                             <img :src="project.image" class="img-fluid">
                         </div>
@@ -163,7 +163,7 @@
                     </div>
                     <div class="col-12 col-md-6 mt60 text-center text-md-right">
                         <p class="made-with">Made with ❤️ at Devstack. </p>
-                        <p class="copyright">© 2019 Devstack. All Rights Reserved.</p>
+                        <p class="copyright">© 2020 Devstack. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
