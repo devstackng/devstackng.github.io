@@ -13,13 +13,11 @@
     <meta property="og:description" content="Devstack is a Nigerian-based software design and development company that builds websites, web apps, mobile apps, custom software, CRM applications, UI/UX design, branding, digital strategy, and other digital products to solve business problems.">
     <meta property="og:site_name" content="Devstack Technologies">
 
-    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Devstack - Mobile app, web design, and development company">
     <meta name="twitter:description" content="Devstack is a Nigerian-based software design and development company that builds websites, web apps, mobile apps, custom software, CRM applications, UI/UX design, branding, digital strategy, and other digital products to solve business problems.">
     <meta name="twitter:image" content="https://www.devstack.ng/img/img-meta.jpg">
     <meta name="twitter:url" content="https://twitter.com/devstackng">
 
-    <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/png" href="icon.png"/>
     <!-- Place favicon.ico in the root directory -->
 
@@ -31,45 +29,17 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <!-- Start of Async Drift Code -->
-<script>
-"use strict";
-
-!function() {
-  var t = window.driftt = window.drift = window.driftt || [];
-  if (!t.init) {
-    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
-    t.factory = function(e) {
-      return function() {
-        var n = Array.prototype.slice.call(arguments);
-        return n.unshift(e), t.push(n), t;
-      };
-    }, t.methods.forEach(function(e) {
-      t[e] = t.factory(e);
-    }), t.load = function(t) {
-      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-      var i = document.getElementsByTagName("script")[0];
-      i.parentNode.insertBefore(o, i);
-    };
-  }
-}();
-drift.SNIPPET_VERSION = '0.3.1';
-drift.load('6pnfm7xidwec');
-</script>
-<!-- End of Async Drift Code -->
-
 </head>
 
 <body>
+  <div id="vueProjects">
     <!--[if lte IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-
     <nav class="navbar s-navbar navbar-expand-md navbar-light fixed-top">
         <a class="navbar-brand" href="index.html">
             <img src="img/symph-logo.svg">
@@ -91,9 +61,6 @@ drift.load('6pnfm7xidwec');
                 <li class="nav-item active">
                     <a class="nav-link" href="work.html">Work</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Resources</a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About Us</a>
                 </li>
@@ -113,6 +80,9 @@ drift.load('6pnfm7xidwec');
                         <p class="mb0">From ideas turned into carefully crafted pixels and problems crafted into solutions.</p>
                         <a href="#our-work" class="cta-link --md mt40 caret-down color-brand">View work</a>
                     </div>
+                    <div class="col-sm-12 col-md-6 col-lg-5 offset-lg-2 categories__cta">
+                        <p v-for="(category, index) in categories" :key="index" class="category_option">{{ category.name }}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,67 +91,15 @@ drift.load('6pnfm7xidwec');
     <section id="our-work">
         <div class="container works-container">
             <div class="row">
-
-                <div class="col-md-5 offset-md-1 work-item">
-                    <a target="_blank" href="https://hiisnigeria.github.io/">
+                <div v-for="(project, index) in projects" :key="index" class="col-md-5 offset-md-1 work-item">
+                    <a target="_blank" :href="project.url">
                         <div class="scale-mask">
-                            <img src="img/hiis-claims.jpg" class="img-fluid">
+                            <img :src="project.image" class="img-fluid">
                         </div>
-                        <h3>Health Insurance Innovative Systems</h3>
+                        <h3>{{ project.name }}</h3>
                         <span>Web App</span><span>Mobile App</span>
                     </a>
                 </div>
-
-                <div class="col-md-5 offset-md-1 work-item">
-                    <a target="_blank" href="https://hiisnigeria.github.io/">
-                        <div class="scale-mask">
-                            <img src="img/hiis-mobile.jpg" class="img-fluid">
-                        </div>
-                        <h3>HIIS Mobile Application</h3>
-                        <span>Mobile Application</span>
-                    </a>
-                </div>
-
-                <div class="col-md-5 offset-md-1 work-item">
-                    <a target="_blank" href="http://feedintel.live/">
-                        <div class="scale-mask">
-                            <img src="img/feedintel.jpg" class="img-fluid">
-                        </div>
-                        <h3>Feedintel</h3>
-                        <span>Mobile App</span><span>Web App</span>
-                    </a>
-                </div>
-
-                <div class="col-md-5 offset-md-1 work-item">
-                    <a target="_blank" href="http://hsdf-stage.herokuapp.com/">
-                        <div class="scale-mask">
-                            <img src="img/hsdf.jpg" class="img-fluid">
-                        </div>
-                        <h3>EFSS - Electronic File Sharing System</h3>
-                        <span>Website</span><span>Web App</span>
-                    </a>
-                </div>
-
-                <div class="col-md-5 offset-md-1 work-item">
-                    <a target="_blank" href="http://healthjobber.herokuapp.com/">
-                        <div class="scale-mask">
-                            <img src="img/healthjobber.jpg" class="img-fluid">
-                        </div>
-                        <h3>HealthJobber</h3>
-                        <span>Web App</span>
-                    </a>
-                </div>
-
-                <div class="col-md-5 offset-md-1 work-item">
-                    <a target="_blank" href="http://healthjobber.herokuapp.com/">
-                        <div class="scale-mask">
-                            <img src="img/hj-mobile.jpg" class="img-fluid">
-                        </div>
-                        <h3>HJ Mobile</h3>
-                        <span>Mobile App</span><span>Web App</span>
-                    </a>
-                </div>
-
             </div>
         </div>
     </section>
@@ -245,12 +163,16 @@ drift.load('6pnfm7xidwec');
                     </div>
                     <div class="col-12 col-md-6 mt60 text-center text-md-right">
                         <p class="made-with">Made with ❤️ at Devstack. </p>
-                        <p class="copyright">© 2019 Devstack. All Rights Reserved.</p>
+                        <p class="copyright">© 2020 Devstack. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
         </section>
     </footer>
+
+  </div>
+
+    <script src="js/projects.js"></script>
 
     <script src="js/vendor/jquery-3.3.1.min.js"></script>
     <script src="js/vendor/bootstrap.bundle.min.js"></script>

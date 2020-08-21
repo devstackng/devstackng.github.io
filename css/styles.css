@@ -1,10 +1,39 @@
+.categories__cta {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category_option {
+  padding: 0.5em 2em;
+  border: 1px solid #0aa5ff;
+  border-radius: 10px;
+  margin: 0 0.5em 0.5em;
+  float: right;
+  font-size: 12px;
+  line-height: inherit;
+  cursor: pointer;
+}
+.category_option:hover {
+  color: white;
+  background: #0aa5ff;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 500px) {
   .s-navbar .navbar-brand img {
     height: 45px;
-    width: auto; }
+    width: auto;
+  }
 
   .footer-section .cta-footer > div > a {
     font-size: 1.75rem;
-    line-height: 4rem; } }
+    line-height: 4rem;
+  }
+
+  .categories__cta {
+    margin-top: 1em;
+    font-size: 10px;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
