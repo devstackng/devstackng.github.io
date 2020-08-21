@@ -108,7 +108,15 @@
                         <a href="#our-work" class="cta-link --md mt40 caret-down color-brand">View work</a>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-5 offset-lg-2 categories__cta">
-                        <p v-for="(category, index) in categories" :key="index" class="category_option">{{ category.name }}</p>
+                        <p 
+                          v-for="(category, index) in categories" 
+                          :key="index" 
+                          class="category_option"
+                          :class="{ categoryActive: category.active }"
+                          @click.prevent="filterProjects(category, index)"
+                        >
+                          {{ category.name }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -118,7 +126,7 @@
     <section id="our-work">
         <div class="container works-container">
             <div class="row">
-                <div v-for="(project, index) in projects" :key="index" class="col-md-5 offset-md-1 work-item">
+                <div v-for="(project, index) in filtered_projects" :key="index" class="col-md-5 offset-md-1 work-item">
                     <a target="_blank" :href="project.url">
                         <div class="scale-mask">
                             <img :src="project.image" class="img-fluid">

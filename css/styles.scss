@@ -17,6 +17,11 @@
     font-weight: 700;
   }
 }
+.categoryActive {
+  background: #0aa5ff;
+  font-weight: 700;
+  color: white;
+}
 @media screen and (max-width: 500px) {
 	.s-navbar .navbar-brand img {
 	    height: 45px;
