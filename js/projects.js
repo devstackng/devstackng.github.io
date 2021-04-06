@@ -43,13 +43,13 @@ const vueApp = new Vue({
         image: "img/projects/gaps-flyer.png",
         name: "GAPS",
         category_ids: [1, 2],
-        url: "https://www.gaps.com.ng/"
+        url: "https://gapstech.herokuapp.com/"
       },
       {
         image: "img/projects/filterland-flyer.png",
         name: "Filterland CRM",
         category_ids: [1, 3],
-        url: "https://demo.filterlandindustries.com/"
+        url: "https://demo.filterlandsales.com/"
       },
       {
         image: "img/projects/amina-flyer.png",
